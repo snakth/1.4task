@@ -168,11 +168,16 @@ animal10 = [duck.animal_type, duck.name, duck.weight]
 
 animals = [animal1, animal2, animal3, animal4, animal5, animal6, animal7, animal8, animal9, animal10]
 
-weights_list = 0
+max_weight = 0
+total_weight = 0
 heaviest_animal = None
+
 for animal in animals:
-	if animal[2] > weights_list:
-		weights_list = animal[2]
+	total_weight += animal[2]
+	if animal[2] > max_weight:
+		max_weight = animal[2]
 		heaviest_animal = animal[0], animal[1]
-print(heaviest_animal)
+
+print("Вес всех животных {} кг".format(total_weight))
+print("Cамое тяжелое животное это {} {}".format(heaviest_animal[0], heaviest_animal[1]))
 
